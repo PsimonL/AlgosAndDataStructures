@@ -1,7 +1,7 @@
 #ifndef ALGORITHMS_GRAPHS_TREES_LISTS_QUEUE_H
 #define ALGORITHMS_GRAPHS_TREES_LISTS_QUEUE_H
 
-#include "iostream"
+#include "BuiltInLibs.h"
 
 class Queue {
 public:

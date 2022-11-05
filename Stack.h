@@ -1,11 +1,8 @@
 #ifndef ALGORITHMS_GRAPHS_TREES_LISTS_STACK_H
 #define ALGORITHMS_GRAPHS_TREES_LISTS_STACK_H
 
+#include "BuiltInLibs.h"
 
-#include "iostream"
-#include <iomanip>
-
-using namespace std;
 #define MAXSIZE 10
 
 class Stack {

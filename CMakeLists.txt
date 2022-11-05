@@ -4,4 +4,4 @@ project(Algorithms_Graphs_Trees_Lists)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Algorithms_Graphs_Trees_Lists
-        DriverCode.cpp Stack.h Queue.h)
+        DriverCode.cpp Stack.h Queue.h BuiltInLibs.cpp BuiltInLibs.h)
