@@ -28,15 +28,15 @@ void Stack::driverCodeStack(){
     cout<<"2) Pop from stack"<<endl;
     cout<<"3) Display stack"<<endl;
     cout<<"4) Exit"<<endl;
-    Stack obj{};
-    obj.push(5);
-    obj.push(10);
-    obj.push(15);
-    obj.printStack();
-    obj.peek();
-    obj.pop();
-    obj.push(30);
-    obj.printStack();
+    Stack ObjStack{};
+    ObjStack.push(5);
+    ObjStack.push(10);
+    ObjStack.push(15);
+    ObjStack.printStack();
+    ObjStack.peek();
+    ObjStack.pop();
+    ObjStack.push(30);
+    ObjStack.printStack();
 }
 
 void Stack::push(int x){
