@@ -8,14 +8,13 @@
 class Queue {
 public:
     int queue[MAXSIZE]{};
-    int top;
     int rear;
     int front;
 
-    Queue(int init = -1): rear(init), front(init){}
+    Queue(int init = 0): rear(init), front(init){}
 
-    void enqueue();
-    void dequeue(int x);
+    void enqueue(int x);
+    void dequeue();
     void peek();
     bool isEmpty();
     bool isFull();
@@ -26,43 +25,64 @@ public:
 };
 
 void Queue::driverCodeQueue() {
-    int ch, val;
-    cout<<"1) Push in queue"<<endl;
-    cout<<"2) Pop from queue"<<endl;
-    cout<<"3) Display queue"<<endl;
-    cout<<"4) Exit"<<endl;
     Queue ObjQueue{};
-    ObjQueue.push(5);
-    ObjQueue.push(10);
-    ObjQueue.push(15);
-    ObjQueue.printStack();
+    ObjQueue.printQueue();
+    ObjQueue.enqueue(4);
+    ObjQueue.enqueue(1);
+    ObjQueue.enqueue(3);
+    ObjQueue.enqueue(8);
+    ObjQueue.enqueue(17);
+    ObjQueue.printQueue();
+    ObjQueue.dequeue();
+    ObjQueue.printQueue();
     ObjQueue.peek();
-    ObjQueue.pop();
-    ObjQueue.push(30);
-    ObjQueue.printStack();
 }
 
-bool Queue::isEmpty() {
-    if(front == -1 && rear == -1){
-        return true;
+bool Queue::isFull() {
+    if(rear == MAXSIZE) return true;
+    else return false;
+}
+void Queue::enqueue(int x) { // insert only at rear or front, it depends on xD
+    if(isFull()){
+        cout << "Queue is full!!!\n";
+        return;
     }else{
-        return false;
+        queue[rear] = x;
+        rear++;
     }
 }
-bool Queue::isFull() {
-
+bool Queue::isEmpty() {
+    if(front == rear) return true;
+    else return false;
 }
-void Queue::enqueue() { // insert only at rear or front, it depends xD
-
-}
-void Queue::dequeue(int x) {
-
+void Queue::dequeue() {
+    if(isEmpty()){
+        cout << "Queue is empty!!!\n";
+    }else{
+        if(front == rear) front = rear = 0;
+        else front++;
+    }
 }
 void Queue::peek() {
-
+    if(isEmpty()){
+        cout << "Queue is empty!\n";
+    }else{
+        cout << "Peek value = " << queue[front];
+    }
 }
 void Queue::printQueue() {
-
+    cout << "Printing Queue...\n";
+    if (isEmpty()) {
+        cout << "Queue is empty!\n";
+    } else {
+        printf("\n");
+        printf("CURRENT QUEUE: \n");
+        for (int i = front; i <= rear; i++) {
+            if(queue[i] != 0) {
+                cout << queue[i] << " ";
+            }
+        }
+        cout << "\n";
+    }
 }
-
 #endif //ALGORITHMS_GRAPHS_TREES_LISTS_QUEUE_H

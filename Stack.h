@@ -23,11 +23,6 @@ public:
 };
 
 void Stack::driverCodeStack(){
-    int ch, val;
-    cout<<"1) Push in stack"<<endl;
-    cout<<"2) Pop from stack"<<endl;
-    cout<<"3) Display stack"<<endl;
-    cout<<"4) Exit"<<endl;
     Stack ObjStack{};
     ObjStack.push(5);
     ObjStack.push(10);
@@ -71,27 +66,31 @@ void Stack::peek() {
 }
 
 void Stack::printStack() {
-    printf("\n");
-    printf("CURRENT STACK: \n");
-    cout
-            <<left
-            << setw(10)
-            << "ID"
-            << left
-            << setw(5)
-            << "Value\n";
-    int counter = 0;
-    for(int i = 0; i <= top; i++){
-        if(stack[i] != 0)
-            cout
-                    << left
-                    << setw(10)
-                    << ++counter
-                    << left
-                    << setw(5)
-                    << stack[i] << endl;
+    if (isEmpty()){
+        cout << "Stack is empty!\n";
+    } else {
+        printf("\n");
+        printf("CURRENT STACK: \n");
+        cout
+                << left
+                << setw(10)
+                << "ID"
+                << left
+                << setw(5)
+                << "Value\n";
+        int counter = 0;
+        for (int i = 0; i <= top; i++) {
+            if (stack[i] != 0)
+                cout
+                        << left
+                        << setw(10)
+                        << ++counter
+                        << left
+                        << setw(5)
+                        << stack[i] << endl;
+        }
+        printf("\n");
     }
-    printf("\n");
 }
 
 
