@@ -14,12 +14,80 @@ public:
     void printLinkedList(Node* head);
     void removeFirst(Node*& head);
     void removeLast(Node*& head);
+    void removeAnywhere(Node*& head, int pos);
+    void removeAllData(Node*& head, int target);
+
+    Node* find(Node* head, int target){ //zwracamy cały nzaleziony element
+        if (!head){ //pusta lista
+            cout << "Lista jest pusta" << endl;
+            return NULL;
+        }
+        Node* temp = head;
+        while (temp->data!=target && temp->next){ //szukamy wartości lub ostatniego elementu
+            temp = temp->next;
+        }
+        if (temp->data == target) { //jeśli wartośc znaleziona - zwróć element
+            return temp;
+        }
+        else{ //jeśli nie to jesteśmy na końcu listy, brak szukanego elementu
+            cout << "Brak elementu o podanej wratości"<<endl;
+        }
+        return NULL;
+    }
 
     void driverCodeLinkedList();
 };
 
 void LinkedList::driverCodeLinkedList() {
+    Node* head = new Node();
+    head->data = 10;
+    head->next = NULL;
 
+    printLinkedList(head);
+    addBeforeHead(head, 5);
+    addBeforeHead(head, 14);
+    printLinkedList(head);
+
+//    printLinkedList(head);
+//    addAfterTail(head, 4);
+//    addAfterTail(head, 14);
+//    addAfterTail(head, 45);
+//    addAfterTail(head, 14);
+//    printLinkedList(head);
+//
+//    printLinkedList(head);
+//    addAnywhere(head, 12, 2);
+//    addAnywhere(head, 11, 0);
+//    addAnywhere(head, 120, 200);
+//    printLinkedList(head);
+//
+//    printLinkedList(head);
+//    removeFirst(head);
+//    printLinkedList(head);
+//    removeLast(head);
+//    printLinkedList(head);
+//    removeAnywhere(head, 2);
+//    printLinkedList(head);
+//    Node* temp;
+//    temp = find(head, 14);
+//    removeAllData(head, temp->data);
+//    printLinkedList(head);
+
+    cout << "\nLinked List done\n";
+}
+
+void LinkedList::printLinkedList(Node* head){
+    cout << "\n";
+    cout << "New print procedure\n";
+    Node* temp = head;
+    if (!head){
+        cout << "lista jest pusta" << endl;
+        return;
+    }
+    while (temp->next){
+        cout << temp->data << "<-";
+        temp = temp->next;
+    }
 }
 
 void LinkedList:: addBeforeHead(Node*& head, int valueToAdd) {
@@ -61,22 +129,6 @@ void LinkedList::addAnywhere(Node*& head, int valueToAdd, int pos){ //dodawanie 
     temp->next = nodeToAdd;
 }
 
-void LinkedList::printLinkedList(Node* head){
-    Node* temp = head;
-
-    if (!head)
-    {
-        cout << "lista jest pusta" << endl;
-        return;
-    }
-
-    while (temp->next)
-    {
-        cout << temp->data << "<-";
-        temp = temp->next;
-    }
-}
-
 void LinkedList::removeFirst(Node*& head){
     if (!head){
         cout << "Lista jest pusta" << endl;
@@ -92,7 +144,6 @@ void LinkedList::removeLast(Node *&head){
         cout << "Lista jest pusta" << endl;
         return;
     }
-
     if (!head->next){ //lista jednoelementowa, usuwamy głowę, lista staje się pusta
         delete head;
         return;
@@ -105,5 +156,68 @@ void LinkedList::removeLast(Node *&head){
     temp->next = NULL; //ręcznie ustawiamy wskaźnik na NULL
 }
 
+void LinkedList::removeAnywhere(Node*& head, int pos){
+    if (!head){ //lista pusta, nic nie usuwamy
+        cout << "Lista jest pusta" << endl;
+        return;
+    }
+    if (pos == 0){
+        removeFirst(head);
+    }
+    Node* temp = head;
+    int i = 0; //zliczamy ilość elementów aż trafimy na pos
+    while (i < pos - 1 && temp->next->next){ //szukamy elementu, który jest położony przed tym, który chemy usunąć
+        temp = temp->next;
+        i++;
+    }
+    //usuwamy pom->next
+    Node* temp2 = temp->next; //zapisujemy element który chemy usunąć
+    temp->next = temp2->next; //pom->next ma teraz wskazywać na to co jestpo usuwanym  elemencie
+    delete temp2;
+}
 
+void LinkedList::removeAllData(Node *&head, int target){
+    if (!head){ //pusta lista
+        cout << "Lista jest pusta" << endl;
+        return;
+    }
+    if (!head->next){ //1-elementowa lista
+        if (head->data == target)
+            delete head;
+        return;
+    }
+    while (head && head->data == target){ //usuwamy wszytskie głowy po kolei dopóki sa równe target
+        removeFirst(head);
+    }
+    Node* temp = head;
+    Node* temp2 = NULL;
+    while (temp->next && temp->next->next){ //pom ma wskazywać na element przed usuwanym
+        if (temp->next->data == target){
+            temp2 = temp->next;
+            temp->next = temp2->next;
+            delete temp2;
+        }
+        temp = temp->next;
+    }
+    if (temp->next->data = target){ //jesli ostatnie element (następnik pom) jest równy target to usuwamy
+        removeLast(head);
+    }
+}
+//Node* find(Node* head, int target){ //zwracamy cały nzaleziony element
+//    if (!head){ //pusta lista
+//        cout << "Lista jest pusta" << endl;
+//        return NULL;
+//    }
+//    Node* temp = head;
+//    while (temp->data!=target && temp->next){ //szukamy wartości lub ostatniego elementu
+//        temp = temp->next;
+//    }
+//    if (temp->data == target) { //jeśli wartośc znaleziona - zwróć element
+//        return temp;
+//    }
+//    else{ //jeśli nie to jesteśmy na końcu listy, brak szukanego elementu
+//        cout << "Brak elementu o podanej wratości"<<endl;
+//    }
+//    return NULL;
+//}
 #endif //ALGOSANDDATASTRUCTURES_LINKEDLIST_H
