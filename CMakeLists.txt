@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.23)
-project(Algorithms_Graphs_Trees_Lists)
+project(AlgosAndDataStructures)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Algorithms_Graphs_Trees_Lists
+add_executable(AlgosAndDataStructures
         DriverCode.cpp Stack.h Queue.h BuiltInLibs.h)
