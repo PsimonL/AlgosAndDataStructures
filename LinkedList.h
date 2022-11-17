@@ -40,36 +40,46 @@ public:
 
 void LinkedList::driverCodeLinkedList() {
     Node* head = new Node();
-    head->data = 10;
+    head->data = 0;
     head->next = NULL;
 
-    printLinkedList(head);
-    addBeforeHead(head, 5);
-    addBeforeHead(head, 14);
-    printLinkedList(head);
+    cout << "In order to Head-> ... ->Tail->NULL\n";
 
 //    printLinkedList(head);
+//    addBeforeHead(head, 1);
+//    addBeforeHead(head, 2);
+//    addBeforeHead(head, 3);
+//    addBeforeHead(head, 4);
+//    addBeforeHead(head, 5);
+//    printLinkedList(head);
+
+//    printLinkedList(head);
+//    addAfterTail(head, 1);
+//    addAfterTail(head, 2);
+//    addAfterTail(head, 3);
 //    addAfterTail(head, 4);
-//    addAfterTail(head, 14);
-//    addAfterTail(head, 45);
-//    addAfterTail(head, 14);
+//    addAfterTail(head, 5);
 //    printLinkedList(head);
-//
+
+    // !!! Not working in all cases
 //    printLinkedList(head);
-//    addAnywhere(head, 12, 2);
-//    addAnywhere(head, 11, 0);
-//    addAnywhere(head, 120, 200);
+//    addAnywhere(head, 1, 2);
+//    addAnywhere(head, 9, 1);
+//    addAnywhere(head, 5, 0);
 //    printLinkedList(head);
-//
+
 //    printLinkedList(head);
 //    removeFirst(head);
+
 //    printLinkedList(head);
 //    removeLast(head);
+
 //    printLinkedList(head);
-//    removeAnywhere(head, 2);
+//    removeAnywhere(head, 1);
+
 //    printLinkedList(head);
 //    Node* temp;
-//    temp = find(head, 14);
+//    temp = find(head, 3);
 //    removeAllData(head, temp->data);
 //    printLinkedList(head);
 
@@ -85,9 +95,11 @@ void LinkedList::printLinkedList(Node* head){
         return;
     }
     while (temp->next){
-        cout << temp->data << "<-";
+        cout << temp->data;
+        cout << " -> ";
         temp = temp->next;
     }
+    cout << "NULL";
 }
 
 void LinkedList:: addBeforeHead(Node*& head, int valueToAdd) {
