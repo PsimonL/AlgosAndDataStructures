@@ -67,7 +67,7 @@ void Queue::peek() {
     if(isEmpty()){
         cout << "Queue is empty!\n";
     }else{
-        cout << "Peek value = " << queue[front];
+        cout << "Peek data = " << queue[front];
     }
 }
 void Queue::printQueue() {
