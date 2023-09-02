@@ -3,5 +3,4 @@ project(AlgosAndDataStructures)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(AlgosAndDataStructures
-        DriverCode.cpp Stack.h Queue.h BuiltInLibs.h)
+add_executable(AlgosAndDataStructures DriverCode.cpp BuiltInLibs.h)
