@@ -6,8 +6,7 @@
 #define ALGOSANDDATASTRUCTURES_KNUTH_MORRIS_PRATT_H
 // #####################################################################################################################
 // https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
-// not in cpp
-// disk implementation
-// complete in the future (possibly)
+// https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/
+// https://www.javatpoint.com/daa-knuth-morris-pratt-algorithm
 // #####################################################################################################################
 #endif //ALGOSANDDATASTRUCTURES_KNUTH_MORRIS_PRATT_H

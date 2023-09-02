@@ -1,3 +1,9 @@
+# https://en.wikipedia.org/wiki/Voronoi_diagram#:~:text=In%20mathematics%2C%20a%20Voronoi%20diagram,%2C%20sites%2C%20or%20generators).
+
+
+
+
+
 import matplotlib.pyplot as plt
 import math
 from PIL import Image

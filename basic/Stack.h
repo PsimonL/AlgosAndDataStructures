@@ -1,3 +1,7 @@
+// https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
+// https://www.geeksforgeeks.org/stack-in-cpp-stl/
+
+
 #ifndef ALGORITHMS_GRAPHS_TREES_LISTS_STACK_H
 #define ALGORITHMS_GRAPHS_TREES_LISTS_STACK_H
 

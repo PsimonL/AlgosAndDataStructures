@@ -1,3 +1,11 @@
+// https://www.geeksforgeeks.org/sorting-algorithms/
+// https://sortvisualizer.com/quicksort/
+// https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
+
+
+
+
+
 #ifndef ALGOSANDDATASTRUCTURES_SORTINGS_H
 #define ALGOSANDDATASTRUCTURES_SORTINGS_H
 
@@ -10,16 +18,16 @@
 #include "BuiltInLibs.h"
 using namespace std;
 
-struct node
+struct Sortings
 {
-    node* next;
-    node* prev;
+    Sortings* next;
+    Sortings* prev;
     int data;
 };
 
-void wypisz(node* head)
+void wypisz(Sortings* head)
 {
-    node* pom = new node;
+    Sortings* pom = new Sortings;
     pom = head;
 
     while (pom != NULL)
@@ -29,9 +37,9 @@ void wypisz(node* head)
     }
 }
 
-void wypisz2(node* head, node* tail)
+void wypisz2(Sortings* head, Sortings* tail)
 {
-    node* pom = new node;
+    Sortings* pom = new Sortings;
     pom = head;
 
     while (pom != NULL && pom!=tail)
@@ -88,12 +96,12 @@ void quicksort(int tab[], int l, int r)
     }
 }
 
-node* partition_lists(node* l, node* r)
+Sortings* partition_lists(Sortings* l, Sortings* r)
 {
     int pivot = l->data;
 
-    node* i = l;
-    node* j = r;
+    Sortings* i = l;
+    Sortings* j = r;
 
     bool isTimeToStop = false;
 
@@ -122,9 +130,9 @@ node* partition_lists(node* l, node* r)
     return i->prev;
 }
 
-void myswapNodes(node*& a, node*& b)
+void myswapNodes(Sortings*& a, Sortings*& b)
 {
-    node* pom = b;
+    Sortings* pom = b;
     a->prev->next = b;
     b->next = a->next;
     a->next->prev = b;
@@ -136,12 +144,12 @@ void myswapNodes(node*& a, node*& b)
     a->prev = pom->prev;
 }
 
-node* partition_lists2(node* l, node* r)
+Sortings* partition_lists2(Sortings* l, Sortings* r)
 {
     int pivot = r->data;
-    node* i = l->prev;
+    Sortings* i = l->prev;
 
-    for (node* j = l; j != r; j = j->next)
+    for (Sortings* j = l; j != r; j = j->next)
     {
         if (j->data > pivot)
         {
@@ -157,21 +165,21 @@ node* partition_lists2(node* l, node* r)
     return i;
 }
 
-void quicksort_lists(node* l, node* r)
+void quicksort_lists(Sortings* l, Sortings* r)
 {
     if (r && l != r && l != r->next)
     {
-        node* p = partition_lists2(l, r);
+        Sortings* p = partition_lists2(l, r);
         quicksort_lists(l, p->prev);
         quicksort_lists(p->next, r);
     }
 }
 
-void addnode(int pos, int value, node*& head)
+void addnode(int pos, int value, Sortings*& head)
 {
-    node* pom = new node;
+    Sortings* pom = new Sortings;
     pom = head;
-    node* nodeToAdd = new node;
+    Sortings* nodeToAdd = new Sortings;
     nodeToAdd->data = value;
     nodeToAdd->next = NULL;
     nodeToAdd->prev = NULL;
@@ -204,9 +212,9 @@ void addnode(int pos, int value, node*& head)
     }
 }
 
-void removeNode(int pos, node*& head)
+void removeNode(int pos, Sortings*& head)
 {
-    node* pom = new node;
+    Sortings* pom = new Sortings;
     pom = head;
 
 
@@ -227,7 +235,7 @@ void removeNode(int pos, node*& head)
         }
         else
         {
-            node* pom2 = new node;
+            Sortings* pom2 = new Sortings;
             pom2 = head->next;
             while (pom2->next != NULL && i != pos - 1)
             {
@@ -243,9 +251,9 @@ void removeNode(int pos, node*& head)
     }
 }
 
-node* getTail(node* head)
+Sortings* getTail(Sortings* head)
 {
-    node* pom = head;
+    Sortings* pom = head;
     if (!pom) return NULL;
 
     while (pom->next)
@@ -254,10 +262,10 @@ node* getTail(node* head)
     return pom;
 }
 
-void splitList(node* head, node*& front, node*& back)
+void splitList(Sortings* head, Sortings*& front, Sortings*& back)
 {
-    node* fast;
-    node* slow;
+    Sortings* fast;
+    Sortings* slow;
     slow = head;
     fast = head->next;
 
@@ -277,9 +285,9 @@ void splitList(node* head, node*& front, node*& back)
     slow->next = NULL;
 }
 
-node* merge(node* a, node* b)
+Sortings* merge(Sortings* a, Sortings* b)
 {
-    node* result = NULL;
+    Sortings* result = NULL;
     if (!a) return (b);
     else if (!b) return (a);
 
@@ -298,10 +306,10 @@ node* merge(node* a, node* b)
     return result;
 }
 
-void mergesort(node*& head)
+void mergesort(Sortings*& head)
 {
-    node* a;
-    node* b;
+    Sortings* a;
+    Sortings* b;
 
     if (!head || !head->next)
         return;
@@ -386,8 +394,8 @@ void bucketsort(int tab[], int n)
 {
     int max = getmax(tab, n);
     int b_nr;
-    node** buckets;
-    buckets = new node * [n];
+    Sortings** buckets;
+    buckets = new Sortings * [n];
 
     for (int i = 0; i < n; i++)
         buckets[i] = NULL;
@@ -526,7 +534,7 @@ void driverCodeSort()
 {
     int tab[40];
     int size = 40;
-    node* head = new node;
+    Sortings* head = new Sortings;
     head = NULL;
 
     srand(time(NULL));
