@@ -1,3 +1,10 @@
+// https://www.geeksforgeeks.org/queue-cpp-stl/
+// https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
+
+
+
+
+
 #ifndef ALGORITHMS_GRAPHS_TREES_LISTS_QUEUE_H
 #define ALGORITHMS_GRAPHS_TREES_LISTS_QUEUE_H
 

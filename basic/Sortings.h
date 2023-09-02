@@ -1,3 +1,11 @@
+// https://www.geeksforgeeks.org/sorting-algorithms/
+// https://sortvisualizer.com/quicksort/
+// https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
+
+
+
+
+
 #ifndef ALGOSANDDATASTRUCTURES_SORTINGS_H
 #define ALGOSANDDATASTRUCTURES_SORTINGS_H
 

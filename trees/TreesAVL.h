@@ -6,8 +6,7 @@
 #define ALGOSANDDATASTRUCTURES_TREESAVL_H
 // #####################################################################################################################
 // https://en.wikipedia.org/wiki/AVL_tree
-// not in cpp
-// disk implementation
-// complete in the future (possibly)
+// https://www.geeksforgeeks.org/introduction-to-avl-tree/
+// https://www.programiz.com/dsa/avl-tree
 // #####################################################################################################################
 #endif //ALGOSANDDATASTRUCTURES_TREESAVL_H

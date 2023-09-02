@@ -5,9 +5,7 @@
 #ifndef ALGOSANDDATASTRUCTURES_DIJKSTRA_H
 #define ALGOSANDDATASTRUCTURES_DIJKSTRA_H
 // #####################################################################################################################
+// https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/
 // https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
-// not in cpp
-// disk implementation
-// complete in the future (possibly)
 // #####################################################################################################################
 #endif //ALGOSANDDATASTRUCTURES_DIJKSTRA_H

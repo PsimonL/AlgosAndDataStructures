@@ -6,5 +6,6 @@
 #define ALGOSANDDATASTRUCTURES_BELLMANFORD_H
 // #####################################################################################################################
 // https://www.geeksforgeeks.org/bellman-ford-algorithm-simple-implementation/
+// https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
 // #####################################################################################################################
 #endif //ALGOSANDDATASTRUCTURES_BELLMANFORD_H

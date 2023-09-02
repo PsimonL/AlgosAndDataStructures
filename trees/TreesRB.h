@@ -6,8 +6,8 @@
 #define ALGOSANDDATASTRUCTURES_TREESRB_H
 // #####################################################################################################################
 // https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
-// not in cpp
-// disk implementation
-// complete in the future (possibly)
+// https://www.geeksforgeeks.org/introduction-to-red-black-tree/
+// https://www.programiz.com/dsa/red-black-tree
+// https://www.cs.auckland.ac.nz/software/AlgAnim/red_black.html
 // #####################################################################################################################
 #endif //ALGOSANDDATASTRUCTURES_TREESRB_H

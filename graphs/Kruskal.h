@@ -230,6 +230,7 @@ int driverCodeKruskal() {
 
 
 // Based on: https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-using-stl-in-c/
+// https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
 //// C++ program for Kruskal's algorithm to find Minimum
 //// Spanning Tree of a given connected, undirected and
 //// weighted graph
